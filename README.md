@@ -1,6 +1,6 @@
 # Digital Products
 
-Website komersial terpisah untuk Find People, Cerdas AI, dan AI Stock Analyzer. Implementasi Hari 04: satu homepage berbahasa Indonesia. Website_Portofolio dan ProcureFlow_ERP bukan bagian katalog ini.
+Website komersial terpisah untuk Find People, Cerdas AI, dan AI Stock Analyzer. Hari 04 menyiapkan homepage; Hari 05 menambahkan katalog dan tiga detail produk berbahasa Indonesia. Website_Portofolio dan ProcureFlow_ERP bukan bagian katalog ini.
 
 ## Menjalankan
 
@@ -11,7 +11,15 @@ npm ci
 npm run dev -- --port 3010
 ```
 
-Route yang dibuat: `/`. Navigasi, use case, dan CTA mengarah ke anchor pada halaman yang sama. Tidak ada halaman detail, checkout, formulir prospek, kontak eksternal yang belum diverifikasi, maupun endpoint pengumpulan data.
+Route yang tersedia:
+
+- `/` — homepage.
+- `/products` — katalog tiga produk dan penjelasan status.
+- `/products/find-people` — relay permintaan Telegram dengan balasan manual.
+- `/products/cerdas-ai` — rencana belajar adaptif, belum fitur tersedia.
+- `/products/stock-analyzer` — dashboard riset dalam pengembangan dengan batas data dan investasi.
+
+CTA mengarah ke detail produk, bagian kesiapan akses, FAQ homepage, atau katalog. Header, breadcrumb, footer, dan tautan produk lainnya menyediakan jalur kembali. Slug produk yang tidak dikenal ditolak sebagai 404. Tidak ada checkout, formulir prospek, kontak eksternal yang belum diverifikasi, maupun endpoint pengumpulan data.
 
 ## Validasi
 
@@ -29,12 +37,12 @@ Browser test memerlukan Chromium: jalankan `npx playwright install chromium` jik
 ## Struktur
 
 - `src/app/`: layout, metadata, homepage, dan stylesheet responsif.
-- `src/components/`: header/menu seluler, ikon lokal, ilustrasi, kartu produk.
-- `src/content/products.ts`: konten, kesiapan produk, dan FAQ.
+- `src/components/`: header/menu seluler, footer bersama, ikon lokal, ilustrasi, kartu dan template detail produk.
+- `src/content/products.ts` dan `product-details.ts`: konten, kesiapan produk, batasan, alur dan FAQ.
 - `tests/`: component test; `tests/browser/`: browser, aksesibilitas, privasi, dan responsive smoke test.
 - `docs/`: journey, keputusan arsitektur, risiko, dan status harian.
 
-Konten utama dirender di server dan diprerender saat build. Hanya menu navigasi yang membutuhkan state di client. Font sistem dan SVG lokal menghindari unduhan font, gambar stok, dan koneksi pihak ketiga. Disclosure memakai elemen HTML `details`/`summary`.
+Konten utama dirender di server dan diprerender saat build. Detail memakai `generateStaticParams` untuk tepat tiga slug dan `dynamicParams = false`; metadata title/description/OpenGraph spesifik per route, dengan noindex dari layout prarilis. Hanya menu navigasi yang membutuhkan state di client. Font sistem dan SVG lokal menghindari unduhan font, gambar stok, dan koneksi pihak ketiga. Disclosure memakai elemen HTML `details`/`summary`.
 
 ## Sebelum rilis publik
 

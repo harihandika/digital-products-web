@@ -1335,3 +1335,300 @@ h2 {
 .diagonal-arrow {
   transform: rotate(-45deg);
 }
+
+/* Katalog dan detail Hari 05; memakai fondasi visual homepage. */
+.product-detail-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.product-detail-link:hover {
+  text-decoration: underline;
+}
+.product-detail-link svg {
+  width: 17px;
+  height: 17px;
+}
+.main-nav [aria-current] {
+  color: var(--purple);
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 38px;
+}
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.breadcrumbs a:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+.breadcrumbs [aria-current] {
+  color: var(--ink);
+}
+.catalog-hero,
+.detail-hero {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding-block: 24px 68px;
+}
+.catalog-hero h1 {
+  margin-top: 18px;
+}
+.catalog-intro {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 620px;
+  line-height: 1.85;
+}
+.availability-note {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #625475;
+}
+.availability-note svg {
+  align-self: center;
+  width: 17px;
+  height: 17px;
+}
+.catalog-guidance {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+.guidance-grid,
+.detail-scope,
+.detail-boundaries {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+.guidance-grid p:not(.eyebrow),
+.detail-scope p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+}
+.guidance-grid .text-link {
+  margin-top: 20px;
+  color: var(--purple);
+}
+.detail-hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: start;
+  gap: 65px;
+}
+.detail-hero h1 {
+  font-size: clamp(38px, 4vw, 58px);
+  letter-spacing: -2px;
+  margin: 15px 0 18px;
+}
+.detail-headline {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.readiness-panel {
+  background: white;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.readiness-panel h2 {
+  font-size: 24px;
+  letter-spacing: -0.6px;
+  margin-bottom: 16px;
+}
+.readiness-panel > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.readiness-panel hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin-block: 22px;
+}
+.readiness-panel .readiness-caption {
+  font-size: 12px;
+}
+.detail-scope h2,
+.detail-boundaries h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.detail-scope .feature-list {
+  padding-bottom: 0;
+}
+.detail-scope .feature-list li {
+  font-size: 13px;
+}
+.workflow-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 18px;
+}
+.workflow-grid {
+  list-style: none;
+  padding: 0;
+  margin: 35px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+.workflow-grid li {
+  border-top: 1px solid #dcd5e8;
+  padding-top: 24px;
+}
+.workflow-grid h3 {
+  margin: 16px 0 12px;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.workflow-grid p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.detail-boundaries ul {
+  padding-left: 20px;
+  margin: 0;
+}
+.detail-boundaries li {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  padding-left: 5px;
+}
+.access-panel {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 55px;
+  align-items: center;
+  background: #f6f2fc;
+  border: 1px solid #e5dcf6;
+  padding: 40px;
+  border-radius: 12px;
+}
+.access-panel h2 {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+.access-panel p:not(.eyebrow) {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+.access-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.related-products {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 35px;
+  padding-bottom: 50px;
+}
+.related-products > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.related-products a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 15px;
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 600;
+}
+.related-products svg {
+  width: 17px;
+  height: 17px;
+}
+.product-not-found {
+  min-height: 65vh;
+}
+.product-not-found p:not(.eyebrow) {
+  color: var(--muted);
+  margin-bottom: 25px;
+  max-width: 540px;
+}
+@media (max-width: 850px) {
+  .detail-hero-grid,
+  .guidance-grid,
+  .detail-scope,
+  .detail-boundaries,
+  .access-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .catalog-hero,
+  .detail-hero {
+    padding-bottom: 45px;
+  }
+  .workflow-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .breadcrumbs {
+    margin-bottom: 26px;
+  }
+  .access-panel {
+    padding: 28px;
+  }
+  .access-actions {
+    align-items: start;
+  }
+  .detail-scope h2,
+  .detail-boundaries h2 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 480px) {
+  .catalog-hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.8px;
+  }
+  .detail-hero h1 {
+    font-size: 37px;
+    letter-spacing: -1.6px;
+    overflow-wrap: anywhere;
+  }
+  .detail-headline {
+    font-size: 20px;
+  }
+  .catalog-intro {
+    font-size: 14px;
+  }
+  .breadcrumbs {
+    gap: 9px;
+    font-size: 11px;
+  }
+  .readiness-panel,
+  .access-panel {
+    padding: 22px;
+  }
+  .access-panel h2 {
+    font-size: 26px;
+  }
+}

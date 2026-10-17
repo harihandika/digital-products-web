@@ -1,4 +1,6 @@
-import { Header, Brand } from "@/components/header";
+import Link from "next/link";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { HeroIllustration } from "@/components/hero-illustration";
 import { ProductCard } from "@/components/product-card";
 import { Icon } from "@/components/icon";
@@ -273,29 +275,16 @@ export default function Home() {
               <br />
               Akses demo dan kanal kontak resmi sedang disiapkan.
             </p>
-            <a className="button button-white" href="#produk">
+            <Link className="button button-white" href="/products">
               Pilih produk yang sesuai <Icon name="arrow" />
-            </a>
+            </Link>
             <span className="closing-note">
               Belum ada pendaftaran atau pembayaran.
             </span>
           </div>
         </section>
       </main>
-      <footer className="shell site-footer">
-        <div>
-          <Brand />
-          <p>Produk digital untuk kebutuhan nyata.</p>
-        </div>
-        <p>
-          © 2026 Digital Products.
-          <br />
-          <span>Dalam pengembangan · Belum dibuka untuk publik</span>
-        </p>
-        <a href="#beranda" className="text-link">
-          Kembali ke atas <span aria-hidden="true">↑</span>
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }

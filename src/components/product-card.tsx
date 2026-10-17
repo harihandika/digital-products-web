@@ -1,5 +1,6 @@
 import { products } from "@/content/products";
 import { Icon } from "@/components/icon";
+import Link from "next/link";
 
 export function ProductCard({
   product,
@@ -36,6 +37,13 @@ export function ProductCard({
       </ul>
       <div className="product-bottom">
         <p className="readiness">{product.readiness}</p>
+        <Link
+          className="product-detail-link"
+          href={`/products/${product.id}`}
+          aria-label={`Lihat detail ${product.name}`}
+        >
+          Lihat detail produk <Icon name="arrow" />
+        </Link>
         <details className="product-details">
           <summary>
             Lihat persiapan akses <Icon name="arrow" />

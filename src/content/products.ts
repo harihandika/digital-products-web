@@ -1,7 +1,9 @@
 import type { IconName } from "@/components/icon";
 
+export type ProductId = "find-people" | "cerdas-ai" | "stock-analyzer";
+
 export const products: {
-  id: string;
+  id: ProductId;
   name: string;
   category: string;
   status: "Beta" | "Coming Soon";

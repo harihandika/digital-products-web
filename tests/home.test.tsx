@@ -76,12 +76,21 @@ describe("Homepage Hari 04", () => {
     expect(screen.queryByRole("form")).not.toBeInTheDocument();
   });
 
-  it("setiap CTA mengarah ke bagian yang ada, tanpa checkout atau tautan kosong", () => {
+  it("CTA beranda mengarah ke anchor yang ada atau route katalog/detail", () => {
     const { container } = render(<Home />);
     for (const link of screen.getAllByRole("link")) {
       const href = link.getAttribute("href")!;
-      expect(href).toMatch(/^#[a-z-]+$/);
-      expect(container.querySelector(href)).toBeInTheDocument();
+      if (href.startsWith("#")) {
+        expect(container.querySelector(href)).toBeInTheDocument();
+      } else {
+        expect([
+          "/",
+          "/products",
+          "/products/find-people",
+          "/products/cerdas-ai",
+          "/products/stock-analyzer",
+        ]).toContain(href);
+      }
     }
   });
 });

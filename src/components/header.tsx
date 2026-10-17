@@ -1,15 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Icon } from "@/components/icon";
 
 export function Brand() {
   return (
-    <a
-      className="brand"
-      href="#beranda"
-      aria-label="Digital Products — beranda"
-    >
+    <Link className="brand" href="/" aria-label="Digital Products — beranda">
       <span className="brand-mark" aria-hidden="true">
         <i />
         <i />
@@ -20,11 +17,11 @@ export function Brand() {
         digital<span className="brand-light">products</span>
         <span className="brand-dot">.</span>
       </span>
-    </a>
+    </Link>
   );
 }
 
-export function Header() {
+export function Header({ home = true }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="site-header">
@@ -54,25 +51,35 @@ export function Header() {
             }
           }}
         >
-          <a href="#produk" onClick={() => setOpen(false)}>
+          <Link
+            href="/products"
+            aria-current={!home ? "true" : undefined}
+            onClick={() => setOpen(false)}
+          >
             Produk
-          </a>
-          <a href="#kegunaan" onClick={() => setOpen(false)}>
+          </Link>
+          <Link
+            href={home ? "#kegunaan" : "/#kegunaan"}
+            onClick={() => setOpen(false)}
+          >
             Untuk siapa
-          </a>
-          <a href="#prinsip" onClick={() => setOpen(false)}>
+          </Link>
+          <Link
+            href={home ? "#prinsip" : "/#prinsip"}
+            onClick={() => setOpen(false)}
+          >
             Prinsip kami
-          </a>
-          <a href="#faq" onClick={() => setOpen(false)}>
+          </Link>
+          <Link href={home ? "#faq" : "/#faq"} onClick={() => setOpen(false)}>
             FAQ
-          </a>
-          <a
-            href="#mulai"
+          </Link>
+          <Link
+            href="/products"
             className="button button-small button-dark"
             onClick={() => setOpen(false)}
           >
             Jelajahi solusi <Icon name="arrow" />
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
